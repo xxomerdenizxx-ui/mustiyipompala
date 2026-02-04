@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Piston Site</title>
+
+<style>
+  body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  #piston {
+    width: 200px;
+    transition: transform 0.2s ease;
+  }
+</style>
+</head>
+
+<body>
+
+<img id="piston"
+     src="https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Piston_JE4.png"
+     alt="Piston">
+
+<script>
+  let acik = false;
+  const piston = document.getElementById("piston");
+
+  document.body.addEventListener("click", () => {
+    acik = !acik;
+
+    if (acik) {
+      piston.src = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/4/4f/Extended_Piston.png";
+      piston.style.transform = "translateX(40px)";
+    } else {
+      piston.src = "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3a/Piston_JE4.png";
+      piston.style.transform = "translateX(0)";
+    }
+  });
+</script>
+
+</body>
+</html>
